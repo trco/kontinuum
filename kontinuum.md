@@ -1,7 +1,7 @@
 # Kontinuum — 24/7 development, wired around GitHub
 
 > **Status:** initial specification (draft v0, 2026-08-16). Describes the *concept* and its shared
-> contract, not code. Kinetik ([`kinetik-mvp.md`](kinetik-mvp.md)) is the reference **consumer**;
+> contract, not code. Kinetik ([`kinetik-mvp.md`](https://github.com/trco/kinetik/blob/master/docs/kinetik-mvp.md)) is the reference **consumer**;
 > this doc is the layer *around* it — the producers, and the Convention that lets everything
 > interoperate through GitHub without knowing about each other.
 
@@ -102,7 +102,7 @@ The executor choice reduces to **one fork: does the issue get `kinetik:ready` or
 label is the switch between the automated lane and the manual lane.
 
 Kinetik's labels already exist and are defined in code
-([`kinetik/github.py`](../kinetik/github.py), [`kinetik-mvp.md` §schema](kinetik-mvp.md)):
+([`kinetik/github.py`](https://github.com/trco/kinetik/blob/master/kinetik/github.py), [`kinetik-mvp.md` §schema](https://github.com/trco/kinetik/blob/master/docs/kinetik-mvp.md)):
 
 - **State (mutually exclusive** — setting one strips the others**):**
   `kinetik:needs-triage` → `kinetik:ready` → `kinetik:claimed` → `kinetik:pr-open`, plus
@@ -114,7 +114,7 @@ Kinetik's labels already exist and are defined in code
 
 - **Labels** = the human ↔ system interface. Queue it, stop it, approve a plan. Set them straight from
   the Project board.
-- **Claim log** (append-only issue comments, [ADR 0001](living-docs/adr/0001-claim-log-in-github-issue-comments.md))
+- **Claim log** (append-only issue comments, [ADR 0001](https://github.com/trco/kinetik/blob/master/docs/living-docs/adr/0001-claim-log-in-github-issue-comments.md))
   = machine ↔ machine ownership, so two Kinetik runners never collide. `kinetik:claimed` is only a
   human-readable *projection* of it. Producers and triage **never touch the claim log** — it's below
   the Convention.
